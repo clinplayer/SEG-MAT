@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IncludePath>C:\dev\CGAL-4.9\build\include;C:\dev\CGAL-4.9\auxiliary\gmp\include;C:\dev\CGAL-4.9\include;D:\library\eigen3;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\dev\CGAL-4.9\build\lib;C:\dev\CGAL-4.9\auxiliary\gmp\lib;C:\dev\CGAL-4.9\build\lib\Release;D:\Program Files\boost_1_59_0\stage\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>CGAL_Core-vc140-mt-4.9.lib;CGAL_ImageIO-vc140-mt-4.9.lib;CGAL_Qt5-vc140-mt-4.9.lib;CGAL-vc140-mt-4.9.lib;libgmp-10.lib;libmpfr-4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
