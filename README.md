@@ -48,7 +48,7 @@ Given a 3D mesh, we use [Q-MAT](http://cgcad.thss.tsinghua.edu.cn/wangbin/qmat/q
 For a non-watertight or a poor-quality mesh, you may need to first convert the mesh to a watertight one using the [tool](https://github.com/hjwdzh/Manifold) for robust MAT computation.  
 
 
-### Citation
+## Citation
 If you find this our useful, please consider citing:
 ```
 @article{SEG-MAT-2020,
@@ -65,7 +65,7 @@ If you find this our useful, please consider citing:
 
 ```
 
-### Acknowlegement
+## Acknowlegement
 
 We would like to acknowledge the following open sources:
 
