@@ -9,7 +9,7 @@ This repository contains the source code for the TVCG 2020 paper [SEG-MAT: 3D Sh
 
 
 ## Executable Tool
-Download the executable file with sample data [SEG-MAT-tool](executable/SEG-MAT-Release.zip).
+Download the executable file with sample data [SEG-MAT-exe-x64](executable/SEG-MAT-Release.zip).
 
 A simple demo:
 ```
