@@ -9,7 +9,7 @@ This repository contains the source code for the TVCG 2020 paper [SEG-MAT: 3D Sh
 
 
 ## Executable Tool
-Download the executable file with sample data [SEG-MAT-exe-x64](executable/SEG-MAT-Release.zip).
+Download the executable file with sample data [SEG-MAT-exe-x64](https://clinplayer.github.io/resources/SEG-MAT-Release.zip).
 
 A simple demo:
 ```
@@ -48,7 +48,7 @@ Given a 3D mesh, we use [Q-MAT](http://cgcad.thss.tsinghua.edu.cn/wangbin/qmat/q
 For a non-watertight or a poor-quality mesh, you may need to first convert the mesh to a watertight one using the [tool](https://github.com/hjwdzh/Manifold) for robust MAT computation.  
 
 
-### Citation
+## Citation
 If you find this our useful, please consider citing:
 ```
 @article{SEG-MAT-2020,
@@ -65,7 +65,7 @@ If you find this our useful, please consider citing:
 
 ```
 
-### Acknowlegement
+## Acknowlegement
 
 We would like to acknowledge the following open sources:
 
