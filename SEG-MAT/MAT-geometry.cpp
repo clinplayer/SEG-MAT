@@ -376,7 +376,7 @@ bool MAT::checkFaceConvexwithTwoNormals(Face f1, Face f2, Vector3 n1, Vector3 n2
 		return false;
 
 }
-bool MAT::checkFaceGrowing(int tag1, int tag2, int i, int j , float growing_threshold)
+bool MAT::checkFaceGrowing(int tag1, int tag2, int i, int j, float growing_threshold)
 {
 
 	double radius_dis = compute_face_radius_difference(faces[i], faces[j]);
@@ -908,7 +908,21 @@ vector<Vector3> MAT::compute_face_consistent_normal(Face& f1, Face& f2)
 	return normals;
 
 }
-
+bool MAT::compute_distance_to_line(Vector3&  p, Vector3& v0, Vector3& v1, double& dist, Vector3& fp)
+{
+	//only used for compute slab
+	Vector3 v0v1(v1 - v0), pv0(v0 - p), pv1(v1 - p);
+	double area = fabs(pow((CGAL::cross_product(v0v1, pv0)).squared_length(), 0.5));
+	if (pow(v0v1.squared_length(), 0.5) > 1e-12)
+	{
+		dist = area / pow(v0v1.squared_length(), 0.5);
+		double t = (pv0*pv0 - pv0*pv1) / (pv0*pv0 + pv1*pv1 - 2 * pv0*pv1);
+		fp = (1 - t)*v0 + t*v1;
+		return true;
+	}
+	else
+		return false;
+}
 bool MAT::compute_slab(Face f, Vector3 normal, vector<double> r, vector<Face>& slab, vector<Vector3>& slabnormals) {
 
 	if (f.is_degenerate())

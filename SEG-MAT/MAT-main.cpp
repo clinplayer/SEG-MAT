@@ -352,9 +352,9 @@ bool MAT::StructureDecompose(float is_thin)
 }
 
 //densify the joints on SMAT for better accuracy
-void MAT::densifyJunction(vector<Patch>& patches, MAT& mat, int num)
+void MAT::densify(vector<Patch>& patches, MAT& mat, int interpolation)
 {
-	float step = 1.0f / double(num);
+	float step = 1.0f / double(interpolation);
 	for (int i = 0; i < patches.size(); i++)
 	{
 		for (int j = 0; j < patches[i].faces.size(); j++)

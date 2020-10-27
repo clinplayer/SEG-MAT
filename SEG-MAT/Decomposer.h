@@ -99,8 +99,6 @@ private:
 		//printf("Computing a tight-fitting bounding box of the point-set\n");
 		bb = gdiam_approx_mvbb_grid_sample(pnt_arr, num, 5, 400);
 
-		//printf("Resulting bounding box:\n");
-
 		vector<vector<double>> bb_points = bb.my_dump();
 		vector<Eigen::Vector3d> bb_output;
 		for (int i = 0; i < 8; i++)

@@ -8,7 +8,7 @@ class MAT
 public:
 
 	//build 
-	MAT(){};
+	MAT() {};
 	MAT(string matfile, Mesh& mesh);
 	~MAT() {};
 
@@ -43,7 +43,7 @@ public:
 	vector<double> centroid;
 
 	//build connection relationships
-	vector<vector<int>> buildMATGraph(double t);
+	vector<vector<int>> buildMATGraph(double t = 0.5);
 	vector<vector<int>> buildSMATGraph();
 	vector<vector<int>> buildVisGraph(vector<Patch> patches, double vis);
 	vector<vector<float>> buildEmdGraph(vector<vector<int>>& patchgraph);
@@ -52,15 +52,15 @@ public:
 
 	//junction rule checking and processing
 	bool StructureDecompose(float is_thin = 8.0);
-	void densifyJunction(vector<Patch>& patches, MAT& mat, int num);
+	void densify(vector<Patch>& patches, MAT& mat, int interpolation = 13);
 
 	//region growing
 	void RegionGrowing(vector<vector<int>>& graph, vector<int>& tags, float growing_threshold, float min_region, bool is_pointcloud = false);
 
 	//region merging
 	void MergeTinyPatches();
-	void MergePatches(vector<vector<int>>& patchgraph,  vector<vector<float>>& emd_values, float max_emd, float merge_para);
-	void MergeIterations(bool use_vis);
+	void MergePatches(vector<vector<int>>& patchgraph, vector<vector<float>>& emd_values, float max_emd, float merge_para);
+	void MergeIterations(bool use_vis = true);
 
 
 private:
@@ -109,21 +109,7 @@ private:
 	Vector3 compute_face_normal(Face& f1);
 	int getLargestFaceIndexOfPatch(Patch& pa1);
 	double compute_face_slab_angle(Face& f1, Face& f2);
-	bool compute_distance_to_line(Vector3&  p, Vector3& v0, Vector3& v1, double& dist, Vector3& fp)
-	{
-		//only used for compute slab
-		Vector3 v0v1(v1 - v0), pv0(v0 - p), pv1(v1 - p);
-		double area = fabs(pow((CGAL::cross_product(v0v1, pv0)).squared_length(), 0.5));
-		if (pow(v0v1.squared_length(), 0.5)> 1e-12)
-		{
-			dist = area / pow(v0v1.squared_length(), 0.5);
-			double t = (pv0*pv0 - pv0*pv1) / (pv0*pv0 + pv1*pv1 - 2 * pv0*pv1);
-			fp = (1 - t)*v0 + t*v1;
-			return true;
-		}
-		else
-			return false;
-	}
+	bool compute_distance_to_line(Vector3&  p, Vector3& v0, Vector3& v1, double& dist, Vector3& fp);
 	bool compute_slab(Face f, Vector3 normal, vector<double> r, vector<Face>& slab, vector<Vector3>& slabnormals);
 
 

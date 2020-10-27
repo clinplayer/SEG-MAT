@@ -18,18 +18,18 @@ void Decomposer::decompose3Dshape(MAT& mat, MAT& smat, Mesh& mesh, float growing
 	cout << "structural decomposition ..." << endl;
 	smat.StructureDecompose();
 	mat.tag_ratio = smat.tag_ratio;
-	smat.densifyJunction(smat.thin_parts, smat, 13);
-	smat.densifyJunction(smat.normal_parts, smat, 13);
+	smat.densify(smat.thin_parts, smat);
+	smat.densify(smat.normal_parts, smat);
 	vector<int> labels = mat.transfer_SMAT_MAT(smat.thin_parts, smat.normal_parts);
 
 	cout << "geometrical decomposition (region growing) ..." << endl;
 	//geometrical decomposition
-	vector<vector<int>> graph = mat.buildMATGraph(0.5f);
+	vector<vector<int>> graph = mat.buildMATGraph();
 	mat.RegionGrowing(graph, labels, growing_threshold, min_region);
 
 	cout << "merging  ..." << endl;
 	mat.MergeTinyPatches();
-	mat.MergeIterations(true);
+	mat.MergeIterations();
 }
 
 void Decomposer::saveColoredMesh(MAT& mat, Mesh& mesh, vector<vector<float>> colors, string outputpath)
@@ -84,10 +84,11 @@ void Decomposer::primitiveAbstraction(MAT& mat, Mesh& mesh, vector<vector<float>
 	vector<Eigen::Vector3d> prim_v;
 	vector<Eigen::Vector4i> prim_f;
 
-	int color_label = 18;
-	for (int l = 0; l < color_label; l++)
+	int color_num = colors.size();
+	for (int l = 0; l < color_num; l++)
 	{
 		vector<Eigen::Vector3d> vertices;
+		//find all the faces with label l
 		BOOST_FOREACH(Facei f_index, mesh.faces()) {
 			int label = final_facelabel[(int)f_index];
 			if (label == l) {

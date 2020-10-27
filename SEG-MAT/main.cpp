@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
 	auto args = p.parse();
 
 	if (!args.parsed_successfully()) {
-		std::cerr << "Unsuccessful parse\n";
+		std::cerr << "Unsuccessful parse, please check SEG-MAT -h for help \n";
 		return -1;
 	}
 
