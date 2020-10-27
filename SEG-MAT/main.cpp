@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
 	p.add("-b", "--bmat", "path to the base MAT (.ma)", ap::mode::REQUIRED);
 	p.add("-s", "--smat", "path to the structure MAT (.ma)", ap::mode::REQUIRED);
 	p.add("-g", "--grow", "(optional) growing threshold, default 0.015");   
-	p.add("-n", "--min", "(optional) minmal region, default 0.002");    
+	p.add("-n", "--min", "(optional) minimal region, default 0.002");    
 	p.add("-p", "--prim", "(optional) whether to compute the primitive representation (0:no, 1:yes)");
 
 	auto args = p.parse();
