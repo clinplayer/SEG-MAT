@@ -125,21 +125,6 @@ bool MAT::checkMATTriangleConnect(Face& f1, Face& f2)
 		return true;
 	return false;
 }
-bool MAT::checkFaceConnect(Face& f1, Face f2)
-{
-	for (int i = 0; i < 3; i++)
-	{
-		Point p1 = f1[i];
-		for (int j = 0; j < 3; j++)
-		{
-			Point p2 = f2[j];
-			double pdis = pow(CGAL::squared_distance(p1, p2), 0.5);
-			double rdis = radius[pointmap[p1]] + radius[pointmap[p2]];
-			if (pdis < rdis)return true;
-		}
-	}
-	return false;
-}
 bool MAT::checkFaceCentroidContained(Face& f, vector<Face>& group)
 {
 	//check if face[ii] contained in this area
@@ -179,42 +164,6 @@ bool MAT::checkFacePointContained(Face& f, vector<Face>& group)
 		}
 	}
 	return false;
-}
-bool MAT::checkMATtriangleStructureConnect_forPoint2Skel(Face& f1, Face& f2)
-{
-	Point intersect_point;
-	//two lines
-	if (f1.is_degenerate() && f2.is_degenerate())
-	{
-		int count = 0;
-		if (f1[0] == f2[0] || f1[0] == f2[1])
-		{
-			intersect_point = f1[0];
-			count++;
-		}
-		if (f1[1] == f2[0] || f1[1] == f2[1])
-		{
-			intersect_point = f1[1];
-			count++;
-		}
-		if (count >= 1 && point_share[intersect_point] == 2)
-		{
-			return true;
-		}
-		if (count >= 1 && point_share[intersect_point] > 2)
-		{
-			return false;
-		}
-		return false;
-	}
-	//two face
-	else if (!f1.is_degenerate() && !f2.is_degenerate())
-	{
-		if (checkMATTriangleConnect(f1, f2))
-			return true;
-	}
-	else
-		return false;
 }
 
 
@@ -1095,24 +1044,4 @@ int MAT::getLargestFaceIndexOfPatch(Patch& pa1)
 		if (faces[i] == max_face1)
 			return i;
 	}
-}
-bool MAT::checkMedialPointAllVisible(Patch& pa1, Patch& pa2)
-{
-
-	for (int i = 0; i < pa1.points.size(); i++)
-	{
-		Point p1 = pa1.points[i];
-		for (int j = 0; j < pa2.points.size(); j++)
-		{
-			Point p2 = pa2.points[j];
-			Edge segment_query(p1, p2);
-			if (segment_query.is_degenerate())continue;
-			if (meshTree->do_intersect(segment_query))
-			{
-				return false;
-			};
-		}
-	}
-	return true;
-
 }

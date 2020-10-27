@@ -80,20 +80,17 @@ private:
 	//basic geometric checking process
 	bool checkPatchConnect(Patch& pa1, Patch& pa2, int mode);
 	bool checkMATTriangleConnect(Face& f1, Face& f2);
-	bool checkFaceConnect(Face& f1, Face f2);
 	bool checkFaceCentroidContained(Face& f, vector<Face>& group);
 	bool checkFacePointContained(Face& f, vector<Face>& group);
-	bool checkMATtriangleStructureConnect_forPoint2Skel(Face & f1, Face & f2);
 	bool checkMATtriangleStructureConnect(Face& f1, Face& f2);
 	bool checkManifold(vector<Face>& faces);
 	bool checkEdgeOnFace(Edge& e, Face& f);
-	bool checkMedialPointAllVisible(Patch & pa1, Patch & pa2);
 	bool checkPatchVisibility(Patch& pa1, Patch& pa2, float visratio);
 	bool checkFaceConvexwithTwoNormals(Face f1, Face f2, Vector3 n1, Vector3 n2);
 
 	//basic geomertic computing algorithm
 	void  getPointShareNum();
-	void getEdgeShareNum();
+	void  getEdgeShareNum();
 	double computeBoundingBox();
 	double compute_face_mean_r(Face f);
 	double compute_triangle_area(Face& f);
