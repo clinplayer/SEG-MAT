@@ -9,7 +9,7 @@ This repository contains the source code for the TVCG 2020 paper [SEG-MAT: 3D Sh
 
 
 ## Executable Tool
-Download the executable file with sample data [SEG-MAT-tool](executable/SEG-MAT Release.zip).
+Download the executable file with sample data [SEG-MAT-tool](executable/SEG-MAT-Release.zip).
 
 A simple demo:
 ```
@@ -26,7 +26,7 @@ Arguments:
     -b, --bmat    path to the base MAT (.ma)
     -s, --smat    path to the structure MAT (.ma)
     -g, --grow    (optional) growing threshold, default 0.015
-    -n, --min     (optional) minmal region, default 0.002
+    -n, --min     (optional) minimal region, default 0.002
     -p, --prim    (optional) whether to compute the primitive representation (0:no, 1:yes)
 ```
 
@@ -40,12 +40,13 @@ You need to install [CGAL](https://www.cgal.org/), [Eigen](http://eigen.tuxfamil
 This code was tested under Windows 10, Visual Studio 2015 with CGAL 4.9, Eigen 3.3.4 and Boost.1.59.0. 
 
 ### Data
-Download the computed MAT of Princeton Segmentation Benchmark [PSB_MAT.zip]() and a subset of ShapeNet [ShapeNet_MAT.zip]().
+Download the computed MAT (*.ma format) of Princeton Segmentation Benchmark [PSB_MAT.zip](https://drive.google.com/file/d/1hLa-by6f_v8Hbw5qln_TAORQn1tGzA2d/view?usp=sharing) and a subset of ShapeNet [ShapeNet_MAT.zip](https://drive.google.com/file/d/1GGZEE2w4YcXfQH8DLvc7lZrOiSP7oCYi/view?usp=sharing).
 
-### MAT Computation (Your own data)
-Given a 3D mesh, we use [Q-MAT](http://cgcad.thss.tsinghua.edu.cn/wangbin/qmat/qmat.html) to compute the base MAT and structure MAT for segmentation. The Q-MAT simplification is based on vertex number, while we recommend the users to set the vertex number of the base MAT to 2000, and the vertex number of the structured MAT to ($max{0.1 \dot intial_vertex_number, 15}$)
+### MAT Computation (for your own data)
+Given a 3D mesh, we use [Q-MAT](http://cgcad.thss.tsinghua.edu.cn/wangbin/qmat/qmat.html) to compute the base MAT and the structure MAT for segmentation. The Q-MAT simplification is based on vertex number, while we recommend the users to set the vertex number of the base MAT to 2000, and the vertex number of the structured MAT to max{0.001\*initial_MAT_vertex_number, 15}.
 
-For a non-watertight or a poor-quality mesh, you may need to first convert the mesh to a watertight one using the [tool](https://github.com/hjwdzh/Manifold) to benefit the MAT computation.  
+For a non-watertight or a poor-quality mesh, you may need to first convert the mesh to a watertight one using the [tool](https://github.com/hjwdzh/Manifold) for robust MAT computation.  
+
 
 ### Citation
 If you find this our useful, please consider citing:
@@ -63,6 +64,17 @@ If you find this our useful, please consider citing:
 }
 
 ```
+
+### Acknowlegement
+
+We would like to acknowledge the following open sources:
+
+[Multi-label optimization](https://vision.cs.uwaterloo.ca/code/)
+
+[Implementation of the Earth Movers Distance (EMD)](http://robotics.stanford.edu/~rubner/emd/default.htm)
+
+[Oriented minimal bounding box](https://sarielhp.org/p/00/diameter/diam_prog.html)
+
 
 ## Contact
 If you have any questions, please email [Cheng Lin](https://clinplayer.github.io/) at chlin@hku.hk.
