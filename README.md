@@ -8,8 +8,8 @@ This repository contains the source code for the TVCG 2020 paper [SEG-MAT: 3D Sh
 </a>
 
 
-## Executable Tool
-Download the executable file with sample data [SEG-MAT-exe-x64](https://clinplayer.github.io/resources/SEG-MAT-Release.zip).
+## Executable
+Download the executable file with sample data [SEG-MAT-x64](https://clinplayer.github.io/resources/SEG-MAT-Release.zip).
 
 A simple demo:
 ```
