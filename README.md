@@ -1,6 +1,6 @@
 # SEG-MAT: 3D Shape Segmentation Using Medial Axis Transform
 
-This repository contains the source code for the TVCG 2020 paper [SEG-MAT: 3D Shape Segmentation Using Medial Axis Transform](https://arxiv.org/abs/2010.11488). In this work, we present an efficient method to automatically segment an arbitary object into meaningful parts based on medial axis transform (MAT). 
+This repository contains the source code for the TVCG 2020 paper [SEG-MAT: 3D Shape Segmentation Using Medial Axis Transform](https://arxiv.org/abs/2010.11488). In this work, we present an efficient method to automatically segment an arbitary object into meaningful parts based on medial axis transform (MAT). Please check out the [project page](https://enigma-li.github.io/projects/segmat/SEG-MAT.html) for more detail.
 
 
 <a>
