@@ -4,7 +4,7 @@ This repository contains the source code for the TVCG 2020 paper [SEG-MAT: 3D Sh
 
 
 <a>
-    <img src="figure/demo.png" width="90% height="90%"/>
+    <img src="doc/demo.png" width="90% height="90%"/>
 </a>
 
 
