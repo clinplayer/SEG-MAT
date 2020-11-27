@@ -9,7 +9,7 @@ This repository contains the source code for the TVCG 2020 paper [SEG-MAT: 3D Sh
 
 
 ## Executable
-Download the executable file with sample data [SEG-MAT-x64](https://clinplayer.github.io/resources/SEG-MAT-Release.zip).
+Download the executable program [SEG-MAT-x64](https://clinplayer.github.io/resources/SEG-MAT-Release.zip) with sample data or you can find it from the `exe program` folder.
 
 A simple demo:
 ```
@@ -35,9 +35,23 @@ Arguments:
 
 ## Code
 ### Installation
-You need to install [CGAL](https://www.cgal.org/), [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page) and [Boost](https://www.boost.org/). Then edit the `.props` files in `config\` by changing the paths to yours.
+**Update**: we currently release the corresponding CMakelist.txt of the source file to boost the usability across platforms (e.g., Windows, Linux, Mac).
 
-This code was tested under Windows 10, Visual Studio 2015 with CGAL 4.9, Eigen 3.3.4 and Boost.1.59.0. 
+Third part libraries： 
+  - [CGAL](https://www.cgal.org/), versions 4.9, 4.11 are tested, Boost 1.59.0 is needed to compile CGAL, please refer to the [link](https://doc.cgal.org/latest/Manual/installation.html) here.
+  - [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page), version 3.3 is already included in the source files
+
+Compile:
+  - Use CMake UI or commond tool to build the project
+  - Specify the CGAL library path
+  - Make it to a specific IDE project, e.g., Visual Studio, XCode, etc.
+  
+Example compile process using CMake UI on a Windows system:
+
+<a>
+    <img src="doc/cmake_example.png" width="100% height="100%"/>
+</a>
+
 
 ### Data
 Download the computed MAT (*.ma format) of Princeton Segmentation Benchmark [PSB_MAT.zip](https://drive.google.com/file/d/1hLa-by6f_v8Hbw5qln_TAORQn1tGzA2d/view?usp=sharing) and a subset of ShapeNet [ShapeNet_MAT.zip](https://drive.google.com/file/d/1GGZEE2w4YcXfQH8DLvc7lZrOiSP7oCYi/view?usp=sharing).
