@@ -90,5 +90,5 @@ We would like to acknowledge the following open sources:
 
 
 ## Contact
-If you have any questions, please email [Cheng Lin](https://clinplayer.github.io/) at chlin@hku.hk.
+If you have any questions, please email [Cheng Lin](https://clinplayer.github.io/) at chlin@hku.hk or [Changjian Li](https://enigma-li.github.io/) at chjili2011@gmail.com.
 
