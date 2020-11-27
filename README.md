@@ -35,7 +35,7 @@ Arguments:
 
 ## Code
 ### Installation
-**Update**: we currently release the corresponding CMakelist.txt of the source file to boost the usability across platforms (e.g., Windows, Linux, Mac).
+**Update**: we currently release the corresponding CMakelist.txt of the project to boost the usability across platforms (e.g., Windows, Linux, Mac).
 
 Third part libraries： 
   - [CGAL](https://www.cgal.org/), versions 4.9, 4.11 are tested, Boost 1.59.0 is needed to compile CGAL, please refer to the [link](https://doc.cgal.org/latest/Manual/installation.html) here.
