@@ -35,18 +35,16 @@ Arguments:
 
 ## Code
 ### Installation
-**Update**: we currently release the corresponding CMakelist.txt of the project to boost the usability across platforms (e.g., Windows, Linux, Mac).
+Use the CMakelist.txt to compile the project.
 
 Third part libraries： 
-  - [CGAL](https://www.cgal.org/), versions 4.9, 4.11 are tested, Boost 1.59.0 is needed to compile CGAL, please refer to the [link](https://doc.cgal.org/latest/Manual/installation.html) here.
-  - [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page), version 3.3 is already included in the source files
+  - [CGAL](https://www.cgal.org/) versions 4.9, 4.11 are tested. Boost 1.59.0 is needed to compile CGAL. Please refer to the [link](https://doc.cgal.org/latest/Manual/installation.html) here.
+  - [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page) version 3.3 is already included in the source files.
 
-Compile:
+Example compile process on Windows:
   - Use CMake UI or commond tool to build the project
   - Specify the CGAL library path
   - Make it to a specific IDE project, e.g., Visual Studio, XCode, etc.
-  
-Example compile process using CMake UI on a Windows system:
 
 <a>
     <img src="doc/cmake_example.png" width="100% height="100%"/>
@@ -80,7 +78,7 @@ If you find this work useful, please consider citing:
 
 ## Acknowlegement
 
-We would like to acknowledge the following open sources:
+We would like to acknowledge the following projects:
 
 [Multi-label optimization](https://vision.cs.uwaterloo.ca/code/)
 
