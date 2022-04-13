@@ -55,7 +55,7 @@ Example compile process on Windows:
 Download the computed MAT (*.ma format) of Princeton Segmentation Benchmark [PSB_MAT.zip](https://drive.google.com/file/d/1hLa-by6f_v8Hbw5qln_TAORQn1tGzA2d/view?usp=sharing) and a subset of ShapeNet [ShapeNet_MAT.zip](https://drive.google.com/file/d/1GGZEE2w4YcXfQH8DLvc7lZrOiSP7oCYi/view?usp=sharing).
 
 ### MAT Computation (for your own data)
-Given a 3D mesh, we use [Q-MAT](https://dl.acm.org/doi/10.1145/2753755) to compute the base MAT and the structure MAT for segmentation (Download Q-MAT [here](https://drive.google.com/drive/folders/1cu9UNAUKgBwQpdBQPEeMT7k6ZKj6eRMz?usp=sharing)]. The Q-MAT simplification is based on vertex number, while we recommend the users to set the vertex number of the base MAT to 2000, and the vertex number of the structure MAT to max{0.001\*initial_MAT_vertex_number, 15}.
+Given a 3D mesh, we use [Q-MAT](https://dl.acm.org/doi/10.1145/2753755) to compute the base MAT and the structure MAT for segmentation (Download Q-MAT [here](https://drive.google.com/drive/folders/1cu9UNAUKgBwQpdBQPEeMT7k6ZKj6eRMz?usp=sharing)). The Q-MAT simplification is based on vertex number, while we recommend the users to set the vertex number of the base MAT to 2000, and the vertex number of the structure MAT to max{0.001\*initial_MAT_vertex_number, 15}.
 
 For a non-watertight or a poor-quality mesh, you may need to first convert the mesh to a watertight one using the [tool](https://github.com/hjwdzh/Manifold) for robust MAT computation.  
 
