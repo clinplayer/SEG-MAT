@@ -63,16 +63,14 @@ For a non-watertight or a poor-quality mesh, you may need to first convert the m
 ## Citation
 If you find this work useful, please consider citing:
 ```
-@article{SEG-MAT-2020,
-   title={SEG-MAT: 3D Shape Segmentation Using Medial Axis Transform},
-   ISSN={2160-9306},
-   url={http://dx.doi.org/10.1109/TVCG.2020.3032566},
-   DOI={10.1109/tvcg.2020.3032566},
-   journal={IEEE Transactions on Visualization and Computer Graphics},
-   publisher={Institute of Electrical and Electronics Engineers (IEEE)},
-   author={Lin, Cheng and Liu, Lingjie and Li, Changjian and Kobbelt, Leif and Wang, Bin and Xin, Shiqing and Wang, Wenping},
-   year={2020},
-   pages={1–1}
+@article{lin2022seg,
+  title={SEG-MAT: 3D Shape Segmentation Using Medial Axis Transform},
+  author={Lin, Cheng and Liu, Lingjie and Li, Changjian and Kobbelt, Leif and Wang, Bin and Xin, Shiqing and Wang, Wenping},
+  journal={IEEE transactions on visualization and computer graphics},
+  volume={28},
+  number={6},
+  pages={2430--2444},
+  year={2022}
 }
 ```
 
