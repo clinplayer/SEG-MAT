@@ -52,7 +52,7 @@ Example compile process on Windows:
 
 
 ### Data
-Download the computed MAT (*.ma format) of Princeton Segmentation Benchmark [PSB_MAT.zip](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/chlin_connect_hku_hk/Edu-XmRNhsRMvqZmOwEduYYB0KgToomB4FakkZV3jf0TnA?e=HoDcFq) and a subset of ShapeNet [ShapeNet_MAT.zip](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/chlin_connect_hku_hk/EaoKYVbKcshMi7kRUhkL2cQBo-XUl1wOLCKpojMMuomBkQ?e=zMsdUe).
+Download the computed MAT (*.ma format) of Princeton Segmentation Benchmark [PSB_MAT.zip](https://drive.google.com/file/d/1FqZM9yQm5VL91o0F3BBbVXLuBuisQFMJ/view?usp=sharing) and a subset of ShapeNet [ShapeNet_MAT.zip](https://drive.google.com/file/d/1QWPXeNkjJRq4f9qcKfVEgZKqVyaK9NnU/view?usp=sharing).
 
 ### MAT Computation (for your own data)
 Given a 3D mesh, we use [Q-MAT](https://binwangthss.github.io/qmat/qmat.html)) to compute the base MAT and the structure MAT for segmentation (Download Q-MAT [exe](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/chlin_connect_hku_hk/EQ7qXlADSq5IuseCeCqMPncBbwOoDqRYrTgKEKolrfOUpA?e=KTcaLm)  [code](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/chlin_connect_hku_hk/ETyMY_FyJeRJvw9SlJQiNIoBGq7KL8z50UAI-W3NYHqgvA?e=B1Gnnq)). The Q-MAT simplification is based on vertex number, while we recommend the users to set the vertex number of the base MAT to 2000, and the vertex number of the structure MAT to max{0.001\*initial_MAT_vertex_number, 15}.
